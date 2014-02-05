@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HmacAttribute", "HmacAttribute\HmacAttribute.csproj", "{AB828ED8-B686-48DD-BBFB-F827F7C5442D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HmacAttribute.Tests", "HmacAttribute.Tests\HmacAttribute.Tests.csproj", "{F380A228-AFFB-43F4-89B1-B8252B7785CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB828ED8-B686-48DD-BBFB-F827F7C5442D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB828ED8-B686-48DD-BBFB-F827F7C5442D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB828ED8-B686-48DD-BBFB-F827F7C5442D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB828ED8-B686-48DD-BBFB-F827F7C5442D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F380A228-AFFB-43F4-89B1-B8252B7785CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F380A228-AFFB-43F4-89B1-B8252B7785CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F380A228-AFFB-43F4-89B1-B8252B7785CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F380A228-AFFB-43F4-89B1-B8252B7785CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
