@@ -1,0 +1,1 @@
+This is a sample of how to enable HMAC request signing on WebApi requests to secure your API calls. 
