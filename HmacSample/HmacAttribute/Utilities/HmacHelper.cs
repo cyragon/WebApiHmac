@@ -20,8 +20,8 @@ namespace HmacAttribute.Utilities
 				inputString = contentTask.Result;
 			}
 
-			string accessToken = request.Headers.GetValues("ClientAccessToken").First();
-			inputString += "ClientAccessToken|" + accessToken;
+			string accessToken = request.Headers.GetValues("Client-Access-Token").First();
+			inputString += "Client-Access-Token|" + accessToken;
 
 			var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(key));
 			byte[] hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(inputString));
