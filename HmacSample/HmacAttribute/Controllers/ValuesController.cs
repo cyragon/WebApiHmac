@@ -18,7 +18,7 @@ namespace HmacAttribute.Controllers
         }
 
         // GET api/values/5
-        [ClientSignatureRequired]
+        [ApiSecurityRequired]
         public DataMessageResponse Get(int id)
         {
             var response = new DataMessageResponse();
@@ -27,5 +27,21 @@ namespace HmacAttribute.Controllers
             return response;
         }
 
+        // POST api/values
+        [ApiSecurityRequired]
+        public DataMessageResponse Post(DataRequest dataRequest)
+        {
+            var response = new DataMessageResponse();
+            response.Message = dataRequest.Name;
+
+            return response;
+        }
+
+    }
+
+    public class DataRequest
+    {
+        public string Name { get; set; }
+        public string Details { get; set; }
     }
 }

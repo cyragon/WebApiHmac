@@ -166,11 +166,9 @@
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="Filters\AccessTokenRequiredAttribute.cs" />
-    <Compile Include="Filters\ClientSignatureRequiredAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Handlers\HmacGenerationHandler.cs" />
     <Compile Include="IDataAccess.cs" />
     <Compile Include="Models\BaseResponse.cs" />
     <Compile Include="Models\DataMessageResponse.cs" />
@@ -292,6 +290,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Handlers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

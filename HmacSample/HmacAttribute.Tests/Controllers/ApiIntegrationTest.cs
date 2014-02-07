@@ -43,6 +43,35 @@ namespace HmacAttribute.Tests.Controllers
             Assert.IsFalse(jsonResponse["ErrorOccurred"]);
             Assert.AreEqual("value10", jsonResponse["Message"]);
         }
+
+        [TestMethod]
+        public void PostDataWithClientAccessToken()
+        {
+            GetClientAccessToken();
+
+            HttpRequestMessage request = new HttpRequestMessage();
+            request.RequestUri = new Uri(baseAddress + "api/Values");
+            request.Content = new StringContent("{Name:\"Ben F\", Details:\"other\"}", Encoding.UTF8, "application/json");
+            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            request.Headers.Add("Client-Access-Token", UserAccessToken);
+            request.Method = HttpMethod.Post;
+
+            request.Headers.Add("Client-Signature", HmacHelper.CalculateHmac(request, UserSecurityToken));
+            HttpClient client = new HttpClient();
+
+            var task = client.SendAsync(request);
+            task.Wait();
+
+            var response = task.Result;
+            var responseString = response.Content.ReadAsStringAsync();
+            responseString.Wait();
+            var jsonResponse = new JavaScriptSerializer().Deserialize<dynamic>(responseString.Result);
+
+            Assert.IsNotNull(response.Content);
+            Assert.IsNotNull(response.Content.Headers.ContentType);
+            Assert.IsFalse(jsonResponse["ErrorOccurred"]);
+            Assert.AreEqual("Ben F", jsonResponse["Message"]);
+        }
         
         [TestMethod]
         public void GetValuesShouldFailWithInvalidClientSignature()
